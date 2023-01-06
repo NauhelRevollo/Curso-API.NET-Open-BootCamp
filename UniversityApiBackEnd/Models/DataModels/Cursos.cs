@@ -13,7 +13,11 @@ namespace UniversityApiBackEnd.Models.DataModels
         Avanzado
     }
     public class Cursos:BaseEntity
+
     {
+        [Required, StringLength(50)]
+        public string Nombre { get; set; } = string.Empty;
+
         [Required, StringLength(280)]
         public string DescripcionCorta { get; set; } = string.Empty;
         public string DescripcionLarga { get; set; } = string.Empty;
