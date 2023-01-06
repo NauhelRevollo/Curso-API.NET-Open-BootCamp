@@ -1,22 +1,25 @@
 ﻿using Microsoft.Build.Framework;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using RequiredAttribute = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace UniversityApiBackEnd.Models.DataModels
 {
     public class Users:BaseEntity
     {
-        [Required,StringLength(50)]
+        //[Required,StringLength(50)]
         public string Name { get; set; }= string.Empty;
 
-        [Required, StringLength(50)]
+       // [Required, StringLength(50)]
         public string LastName { get; set; } = string.Empty;
 
-        [Required,EmailAddress]
+        //[Required,EmailAddress]
         public string Mail { get; set; } = string.Empty;
 
-        [Required]
+        //[Required]
         public string Password { get; set; } = string.Empty;
+
+        
     }
 }

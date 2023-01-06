@@ -1,6 +1,7 @@
 ﻿using Microsoft.Build.Framework;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using RequiredAttribute = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
 namespace UniversityApiBackEnd.Models.DataModels
@@ -15,10 +16,10 @@ namespace UniversityApiBackEnd.Models.DataModels
     public class Cursos:BaseEntity
 
     {
-        [Required, StringLength(50)]
+      //  [Required, StringLength(50)]
         public string Nombre { get; set; } = string.Empty;
 
-        [Required, StringLength(280)]
+      //[Required, StringLength(280)]
         public string DescripcionCorta { get; set; } = string.Empty;
         public string DescripcionLarga { get; set; } = string.Empty;
         public string PublicoObjetivo { get; set; } = string.Empty;
@@ -26,13 +27,13 @@ namespace UniversityApiBackEnd.Models.DataModels
         public string Requisitos { get; set; } = string.Empty;        
         public Nivel Nivel { get; set; } = Nivel.Basico;
         
-        [Required]
+      //  [Required]
         public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
 
-        [Required]
+        //[Required]
         public ICollection<Estudiante> Estudiantes { get; set; } = new List<Estudiante>();
 
-        [Required]
+       // [Required]
         public Capitulos Capitulo { get; set; } = new Capitulos();
 
     }

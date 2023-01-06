@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityApiBackEnd.DataAccess;
 
@@ -11,9 +12,10 @@ using UniversityApiBackEnd.DataAccess;
 namespace UniversityApiBackEnd.Migrations
 {
     [DbContext(typeof(UniversityDBContext))]
-    partial class UniversityDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230106191324_espero sirva")]
+    partial class esperosirva
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +84,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
@@ -126,7 +129,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
@@ -164,7 +168,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("DescripcionCorta")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(280)
+                        .HasColumnType("nvarchar(280)");
 
                     b.Property<string>("DescripcionLarga")
                         .IsRequired()
@@ -178,7 +183,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Objetivos")
                         .IsRequired()
@@ -214,7 +220,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Apellido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
@@ -224,6 +231,7 @@ namespace UniversityApiBackEnd.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("DayOfBirth")
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("DeleteAt")
@@ -238,7 +246,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
@@ -279,7 +288,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Mail")
                         .IsRequired()
@@ -287,7 +297,8 @@ namespace UniversityApiBackEnd.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()

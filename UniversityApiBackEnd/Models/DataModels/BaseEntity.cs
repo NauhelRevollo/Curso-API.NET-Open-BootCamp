@@ -8,12 +8,11 @@ namespace UniversityApiBackEnd.Models.DataModels
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
-        public virtual Users Createdby { get; set; } = new Users();
+        public string Createdby { get; set; } = string.Empty;
         public DateTime CreateAt { get; set; } = DateTime.Now;
-        public virtual Users Updateby  { get; set; } =  new Users();
+        public string Updateby  { get; set; } = string.Empty;
         public DateTime? UpdateAt { get; set; } 
-        public virtual Users Deleteby  { get; set; } =  new Users();
+        public string Deleteby  { get; set; } = string.Empty;
         public DateTime? DeleteAt { get; set; }
 
         public bool IsDeleted { get; set; }
