@@ -1,4 +1,19 @@
+//1. Usings to work with entetityframework
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using UniversityAPI.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//2. Concection with SQL server Express
+
+const string CONNECTIONNAME = "UniversityDB";
+var connectionString = builder.Configuration.GetConnectionString(CONNECTIONNAME);
+
+//3. Add Context
+
+builder.Services.AddDbContext<UniversityDBContext>(options => options.UseSqlServer(connectionString));
+
 
 // Add services to the container.
 
